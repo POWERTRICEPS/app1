@@ -1,0 +1,31 @@
+#:kivy 1.11.1
+<LoginScreen>:
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 1
+            Label:
+                id: "title_card"
+                text: "Log in"
+                font_size: '20sp'
+            TextInput:
+                id: "username"
+                hint_text: "Username"
+            TextInput:
+                id: "password"
+                hint_text: "Password"
+                password: True
+            Button:
+                text: "Login"
+                on_press: root.login()
+        GridLayout:
+            cols: 2
+            Button:
+                text: "Forgot username?"
+            Button:
+                text: "Forgot password?"
+
+<RootWidget>:
+    LoginScreen:
+        name: "login_screen"
+
