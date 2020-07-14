@@ -19,6 +19,9 @@ class LoginScreen(Screen):
 class RootWidget(ScreenManager):
     pass
 
+class SignUpScreen(Screen):
+    def add_user(self, uname, pword):
+        print(uname, pword)
 
 class MainApp(App):
     def build(self):
@@ -28,7 +31,3 @@ if __name__ == "__main__":
     MainApp().run()
 
 
-def whahriauwhriaurhwar():
-    print("waewar")
-def sup():
-    return 1+1
