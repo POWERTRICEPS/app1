@@ -25,6 +25,10 @@ class SignUpScreen(Screen):
     def add_user(self, uname, pword):
         print(uname, pword)
 
+
+class HomeScreen(Screen):
+    pass
+
 class MainApp(App):
     def build(self):
         return RootWidget()
