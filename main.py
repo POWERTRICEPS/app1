@@ -10,6 +10,7 @@ from datetime import datetime
 from pathlib import Path
 import random
 
+
 Builder.load_file('design.kv')
 
 class LoginScreen(Screen):
@@ -23,7 +24,12 @@ class RootWidget(ScreenManager):
 
 class SignUpScreen(Screen):
     def add_user(self, uname, pword):
-        print(uname, pword)
+        with open("users.json") as file:
+            users = json.load(file)
+        users[uname] = {'username': uname, 'password': pword, 'created': datetime.now().strftime("%Y-%m-%d %H-%M-%S")}
+        
+    def go_back(self):
+        self.manager.current = "login_screen"
 
 
 class HomeScreen(Screen):
