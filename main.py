@@ -15,10 +15,17 @@ Builder.load_file('design.kv')
 class LoginScreen(Screen):
     def sign_up(self):
         self.manager.current = "sign_up_screen"
+    def login(self):
+        self.manager.current = "home_screen"
 
 class RootWidget(ScreenManager):
     pass
 
+class HomeScreen(Screen):
+    pass
+
+class SignUpScreen(Screen):
+    pass 
 
 class MainApp(App):
     def build(self):
