@@ -4,6 +4,8 @@
         cols: 1
         GridLayout:
             cols: 1
+            padding: 20, 20
+            spacing: 20, 20
             Label:
                 id: "title_card"
                 text: "Log in"
@@ -15,9 +17,12 @@
                 id: "password"
                 hint_text: "Password"
                 password: True
-            Button:
-                text: "Login"
-                on_press: root.login()
+            RelativeLayout:
+                Button:
+                    size_hint: 0.3, 0.5
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    text: "Login"
+                    on_press: root.login()
         GridLayout:
             cols: 2
             Button:
@@ -60,7 +65,25 @@
                 root.manager.transition.direction ="left"
 
 
-
+<WelcomeScreen>:
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 1
+            padding: 20, 10
+            Label:
+                text: "Welcome to myUC!"
+            ScrollView:
+                Label:
+                    id: intro_text
+                    text: "The UC system is comprised of the most prestigious public universities in the country. It is no coincidence that they are also the most competitive schools as well, receiving hundreds of thousands of applciants yearly. To be a standout applicant, one must excel both in the classroom and out. This app will help you stay on top of your classes and extracirriculars, as well as giving a general idea of where you stand as an applicant."
+                    text_size: self.width, None
+                    size_hint_y: None
+                    height: self.texture_size[1]
+            Button:
+                text: "Go to Home"
+                on_press:
+                    app.root.current = 'home_screen'
 <RootWidget>:
     LoginScreen:
         name: "login_screen"
@@ -68,3 +91,5 @@
         name: "home_screen"
     SignUpScreen:
         name: "sign_up_screen"
+    WelcomeScreen:
+        name: "welcome_screen"
