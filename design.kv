@@ -22,7 +22,7 @@
             cols: 2
             Button:
                 text: "Sign Up"
-                on_press: 
+                on_press:
                     root.sign_up()
                     root.manager.transition.direction ="right"
             Button:
@@ -35,20 +35,21 @@
             Button:
                 text: "s up"
 <SignUpScreen>:
-    GridLayout: 
+    GridLayout:
         cols: 1
-        Label: 
+        Label:
             text: "Start your new account!"
         TextInput:
-            id: username 
+            id: username
             hint_text: "Username"
         TextInput:
-            id: password 
+            id: password
             hint_text: "Password"
         Button:
             text: "Create Account"
             on_press: root.add_user(root.ids.username.text, root.ids.password.text)
-    GridLayout:  
+            on_release: app.root.current = 'login_screen'
+    GridLayout:
         Button:
             size_hint: 0.5, 0.5
             background_color: 0.1, 0.5, 0.6, 1
@@ -57,9 +58,9 @@
             on_release:
                 app.root.current = 'login_screen'
                 root.manager.transition.direction ="left"
-                    
-                 
-                
+
+
+
 <RootWidget>:
     LoginScreen:
         name: "login_screen"
@@ -67,4 +68,3 @@
         name: "home_screen"
     SignUpScreen:
         name: "sign_up_screen"
-
