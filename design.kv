@@ -23,6 +23,9 @@
                 pos_hint: {'center_x': 0.5, 'center_y': 0.5}
                 text: "Login"
                 on_press: root.login(root.ids.username.text, root.ids.password.text)
+            Label:
+                id: login_wrong
+                text:  ""
         GridLayout:
             cols: 2
             Button:
@@ -44,8 +47,7 @@
                 pos_hint: {'center_x': 0.9, 'center_y': 0.95}
             Label:
                 
-                
-
+                         
 <SignUpScreen>:
     GridLayout:
         cols: 1
