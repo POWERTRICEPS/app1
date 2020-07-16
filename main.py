@@ -9,6 +9,7 @@ import json, glob
 from datetime import datetime
 from pathlib import Path
 import random
+from kivy.uix.popup import Popup
 
 Builder.load_file('design.kv')
 
@@ -23,9 +24,8 @@ class LoginScreen(Screen):
             self.manager.current = "welcome_screen"
             print("Hello")
         else:
-            print("afafa")
-        
-            
+            self.ids.login_wrong = "Wrong username or password."
+
 class RootWidget(ScreenManager):
     pass
 
