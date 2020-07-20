@@ -29,6 +29,7 @@ class LoginScreen(Screen):
 class RootWidget(ScreenManager):
     pass
 
+
 class SignUpScreen(Screen):
     def add_user(self, uname, pword):
         with open("users.json") as file:
