@@ -26,9 +26,8 @@ class LoginScreen(Screen):
         else:
             self.ids.login_wrong = "Wrong username or password."
 
-class RootWidget(ScreenManager):
+class ImageButton(ButtonBehavior, Image):
     pass
-
 
 class SignUpScreen(Screen):
     def add_user(self, uname, pword):
@@ -55,6 +54,14 @@ class HomeScreen(Screen):
 
 class WelcomeScreen(Screen):
     pass
+
+class ForgotPassword():
+    pass
+
+
+class RootWidget(ScreenManager):
+    pass
+
 
 class MainApp(App):
     def build(self):
