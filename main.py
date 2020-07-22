@@ -2,7 +2,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.animation import Animation
-#from hoverable import HoverBehavior
+from hoverable import HoverBehavior
 from kivy.uix.image import Image
 from kivy.uix.behaviors import ButtonBehavior
 import json, glob
@@ -26,7 +26,7 @@ class LoginScreen(Screen):
         else:
             self.ids.login_wrong = "Wrong username or password."
 
-class ImageButton(ButtonBehavior, Image):
+class ImageButton(ButtonBehavior, Image, HoverBehavior):
     pass
 
 class SignUpScreen(Screen):
@@ -64,25 +64,31 @@ class HomeScreen(Screen):
     def ucchance_screen(self):
         self.manager.current = "ucchance_screen"
 
-class CampusScreen(Screen):
+class AppScreen(Screen):
+    def go_back(self):
+        self.manager.current = "home_screen"
+    def go_here(self):
+        self.manager.current = "login_screen"
+
+class CampusScreen(AppScreen):
     pass
-class AdmissionScreen(Screen):
+class AdmissionScreen(AppScreen):
     pass
-class MyCourseScreen(Screen):
+class MyCourseScreen(AppScreen):
     pass
-class MyGPAScreen(Screen):
+class MyGPAScreen(AppScreen):
     pass
-class MyECScreen(Screen):
+class MyECScreen(AppScreen):
     pass
-class UCChanceScreen(Screen):
+class UCChanceScreen(AppScreen):
     pass
 
-
-class WelcomeScreen(Screen):
+class WelcomeScreen(AppScreen, Screen):
     pass
 
 class ForgotPassword():
     pass
+
 
 
 class RootWidget(ScreenManager):
