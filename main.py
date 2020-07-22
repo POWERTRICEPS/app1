@@ -16,6 +16,8 @@ Builder.load_file('design.kv')
 class LoginScreen(Screen):
     def sign_up(self):
         self.manager.current = "sign_up_screen"
+    def forgot_pass(self):
+        self.manager.current = "forgot_password"
 
     def login(self, uname, pword):
         with open("users.json") as file:
@@ -76,6 +78,7 @@ class AdmissionScreen(AppScreen):
     pass
 class MyCourseScreen(AppScreen):
     pass
+
 class MyGPAScreen(AppScreen):
     pass
 class MyECScreen(AppScreen):
@@ -86,10 +89,8 @@ class UCChanceScreen(AppScreen):
 class WelcomeScreen(AppScreen, Screen):
     pass
 
-class ForgotPassword():
+class ForgotPassword(AppScreen, Screen):
     pass
-
-
 
 class RootWidget(ScreenManager):
     pass
