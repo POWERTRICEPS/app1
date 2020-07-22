@@ -16,7 +16,7 @@ Builder.load_file('design.kv')
 class LoginScreen(Screen):
     def sign_up(self):
         self.manager.current = "sign_up_screen"
-    
+
     def login(self, uname, pword):
         with open("users.json") as file:
             users = json.load(file)
@@ -51,6 +51,32 @@ class HomeScreen(Screen):
     def log_out(self):
         self.manager.transition.direction = "up"
         self.manager.current = "login_screen"
+    def campus_screen(self):
+        self.manager.current = "campus_screen"
+    def admission_screen(self):
+        self.manager.current = "admission_screen"
+    def mycourse_screen(self):
+        self.manager.current = "mycourse_screen"
+    def mygpa_screen(self):
+        self.manager.current = "mygpa_screen"
+    def ec_screen(self):
+        self.manager.current = "ec_screen"
+    def ucchance_screen(self):
+        self.manager.current = "ucchance_screen"
+
+class CampusScreen(Screen):
+    pass
+class AdmissionScreen(Screen):
+    pass
+class MyCourseScreen(Screen):
+    pass
+class MyGPAScreen(Screen):
+    pass
+class MyECScreen(Screen):
+    pass
+class UCChanceScreen(Screen):
+    pass
+
 
 class WelcomeScreen(Screen):
     pass
@@ -66,7 +92,7 @@ class RootWidget(ScreenManager):
 class MainApp(App):
     def build(self):
         return RootWidget()
-    
+
 
 if __name__ == "__main__":
     MainApp().run()

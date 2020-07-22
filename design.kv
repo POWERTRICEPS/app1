@@ -77,26 +77,72 @@
 
 
 <HomeScreen>:
-    RelativeLayout:
-        cols: 1
-        Button:
-            text: "Logout"
-            background_color: 1, 1, 1, 0
-            opacity: 1 if self.state == 'normal' else 0.5
-            color: 0.1, 0.7, 1, 1
-            on_press: root.log_out()
-            size_hint: 0.2, 0.1
-            pos_hint: {'center_x': 0.95, 'center_y': 0.95}
+    GridLayout:
+        cols:1
+        RelativeLayout:
+            cols: 1
+            Button:
+                text: "Logout"
+                background_color: 1, 1, 1, 0
+                opacity: 1 if self.state == 'normal' else 0.5
+                color: 0.1, 0.7, 1, 1
+                on_press: root.log_out()
+                size_hint: 0.2, 0.1
+                pos_hint: {'center_x': 0.95, 'center_y': 0.95}
+        GridLayout:
+            cols:3
+            Button:
+                text: "UC Campuses"
+                on_press: root.campus_screen()
+            Button:
+                text: "UC Admission Requirements"
+                on_press: root.admission_screen()
+            Button:
+                text: "My Courses"
+                on_press: root.mycourse_screen()
+            Button:
+                text: "My GPA"
+                on_press: root.mygpa_screen()
+            Button:
+                text: "My Extracirricular Activities"
+                on_press: root.ec_screen()
+            Button:
+                text: "Estimated Chance of Admission"
+                on_press: root.ucchance_screen()
         ImageButton:
             size_hint: 0.15, 0.12
             pos_hint: {'center_x': 0.1, 'center_y': 0.95}
             source:'ucla.png'
         ImageButton:
             size_hint: 0.15, 0.2
-            pos_hint: 
+            pos_hint:
             source:'ucsd.png'
-        
-                
+        ImageButton:
+            size_hint: 0.15, 0.2
+            pos_hint:
+            source:'cal.png'
+        ImageButton:
+            size_hint: 0.15, 0.2
+            pos_hint:
+            source:'sb.png'
+        ImageButton:
+            size_hint: 0.15, 0.2
+            pos_hint:
+            source:'ucd.png'
+        ImageButton:
+            size_hint: 0.15, 0.2
+            pos_hint:
+            source:'ucm.png'
+        ImageButton:
+            size_hint: 0.15, 0.2
+            pos_hint:
+            source:'ucr.png'
+        ImageButton:
+            size_hint: 0.15, 0.2
+            pos_hint:
+            source:'ucsc.png'
+
+
 
 <WelcomeScreen>:
     GridLayout:
@@ -131,7 +177,7 @@
 <SignUpScreenSuccess>:
     GridLayout:
         cols: 1
-        Label: 
+        Label:
             text: "Your account has been created!"
         Button:
 
@@ -140,6 +186,37 @@
                 root.manager.transition.direction ="down"
                 app.root.current = 'login_screen'
 
+<CampusScreen>:
+    GridLayout:
+        cols:1
+        Label:
+            text: "campus"
+
+<AdmissionScreen>:
+    GridLayout:
+        cols:1
+        Label:
+            text: "admissions"
+<MyCourseScreen>:
+    GridLayout:
+        cols:1
+        Label:
+            text: "my courses"
+<MyGPAScreen>:
+    GridLayout:
+        cols:1
+        Label:
+            text: "mygpa"
+<MyECScreen>:
+    GridLayout:
+        cols:1
+        Label:
+            text: "ec screen"
+<UCChanceScreen>:
+    GridLayout:
+        cols:1
+        Label:
+            text: "uc chance"
 
 
 
@@ -154,4 +231,15 @@
         name: "welcome_screen"
     SignUpScreenSuccess:
         name: "sign_up_screen_success"
-    
+    CampusScreen:
+        name: "campus_screen"
+    AdmissionScreen:
+        name: "admission_screen"
+    MyCourseScreen:
+        name: "mycourse_screen"
+    MyGPAScreen:
+        name: "mygpa_screen"
+    MyECScreen:
+        name: "ec_screen"
+    UCChanceScreen:
+        name: "ucchance_screen"
