@@ -38,7 +38,7 @@
                     root.manager.transition.direction ="right"
                 background_color: 1, 1, 1, 0
                 opacity: 1 if self.state == 'normal' else 0.5
-                color: 0.1, 0.7, 1, 1
+                color: 0.1, 0.7, 1, 1 
             Button:
                 text: "Forgot password?"
                 background_color: 1, 1, 1, 0
@@ -115,6 +115,8 @@
                 font_size: '20sp'
         GridLayout:
             cols:3
+            padding: 15, 15
+            spacing: 12, 12
             Button:
                 text: "UC Campuses"
                 on_press:
